@@ -19,15 +19,9 @@ jobs:
       - name: Set up remote
         env:
           HF_TOKEN: ${{ secrets.HG }}
-        run: git remote add space https://huggingface.co/spaces/faalli/ff
+        run: git remote add space https://faalli:$HG@huggingface.co/spaces/faalli/demo
 
-      - name: Push to Hugging Face hub
-        env:
-          HF_TOKEN: ${{ secrets.HG }}
-        run: git push --force https://faalli:${{ secrets.HG }}@huggingface.co/spaces/faalli/ff main
-
-        
       - name: Push to hub
         env:
-          HF: ${{ secrets.HGPROJ }}
-        run: git push --force https://faalli:$HGPROJ@huggingface.co/spaces/faalli/ff main
+          HF_TOKEN: ${{ secrets.HG }}
+        run: git push --force https://faalli:$HG@huggingface.co/spaces/faalli/demo main
