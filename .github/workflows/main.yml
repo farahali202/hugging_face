@@ -21,10 +21,10 @@ jobs:
           fetch-depth: 0
       - name: Add remote
         env:
-          HF: ${{ secrets.HF }}
-        run: git remote add space https://faalli:$HF@huggingface.co/spaces/faalli/ff
+          HF: ${{ secrets.HGPROJ }}
+        run: git remote add space https://faalli:$HGPROJ@huggingface.co/spaces/faalli/ff
         
       - name: Push to hub
         env:
-          HF: ${{ secrets.HF }}
-        run: git push --force https://faalli:$HF@huggingface.co/spaces/faalli/ff main
+          HF: ${{ secrets.HGPROJ }}
+        run: git push --force https://faalli:$HGPROJ@huggingface.co/spaces/faalli/ff main
